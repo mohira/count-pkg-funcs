@@ -27,7 +27,8 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			if !ok {
 				continue
 			}
-			fmt.Println(funcDecl.Name)
+			fmt.Println(funcDecl.Name, funcDecl.Pos(), funcDecl.Body)
+
 		}
 	}
 	return nil, nil
