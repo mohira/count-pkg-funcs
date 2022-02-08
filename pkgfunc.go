@@ -27,7 +27,11 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			if !ok {
 				continue
 			}
-			fmt.Println(funcDecl.Name)
+
+			// 関数だけが対象やで！
+			if funcDecl.Recv == nil {
+				fmt.Println(funcDecl.Name)
+			}
 
 		}
 	}
